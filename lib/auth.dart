@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:e_barber/auth-login.dart';
 import 'package:e_barber/auth-register.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +22,7 @@ class AuthMain extends StatelessWidget{
             Container(
               padding: const EdgeInsets.only(bottom: 30),
               child: const Text("E-Barber",
-              style: TextStyle(fontSize: 24),),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),),
             ),
             Container(
               padding: const EdgeInsets.only(bottom: 10),
