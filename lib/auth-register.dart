@@ -1,9 +1,9 @@
-import 'package:e_barber/auth-login.dart';
-import 'package:e_barber/auth-register.dart';
+import 'package:e_barber/barberman/auth/register-barberman.dart';
+import 'package:e_barber/pelanggan/auth/register-pelanggan.dart';
 import 'package:flutter/material.dart';
 
-class AuthMain extends StatelessWidget{
-  const AuthMain({Key? key}) : super(key: key);
+class AuthRegister extends StatelessWidget{
+  const AuthRegister({Key? key}) : super(key: key);
 
   // int _selectedNavbar=1;
   
@@ -30,10 +30,10 @@ class AuthMain extends StatelessWidget{
                 child: FloatingActionButton.extended (
                   backgroundColor: const Color(0xff20639B),
                   onPressed: () {
-                    Route route = MaterialPageRoute(builder: (context) => const AuthRegister());
+                    Route route = MaterialPageRoute(builder: (context) => const RegisterBarberman());
                     Navigator.push(context, route);
                   },
-                  label: const Text("Register"),
+                  label: const Text("Barberman"),
                 ),
               )  
             ),
@@ -44,10 +44,10 @@ class AuthMain extends StatelessWidget{
                 child: FloatingActionButton.extended (
                   backgroundColor: const Color(0xff20639B),
                   onPressed: (){
-                    Route route = MaterialPageRoute(builder: (context) => const AuthLogin());
+                    Route route = MaterialPageRoute(builder: (context) => const RegisterPelanggan());
                     Navigator.push(context, route);
                   },
-                  label: const Text("Login"),
+                  label: const Text("Pelanggan"),
                 ),
               )  
             ),
