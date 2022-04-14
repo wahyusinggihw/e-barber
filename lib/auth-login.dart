@@ -41,6 +41,7 @@ class AuthLogin extends StatelessWidget{
                 width: 250,
                 height: 50,
                 child: FloatingActionButton.extended (
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   heroTag: "LoginBarberman",
                   backgroundColor: const Color(0xff20639B),
                   onPressed: () {
@@ -56,6 +57,7 @@ class AuthLogin extends StatelessWidget{
                 width: 250,
                 height: 50,
                 child: FloatingActionButton.extended (
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   heroTag: "LoginPelanggan",
                   backgroundColor: const Color(0xff20639B),
                   onPressed: (){
