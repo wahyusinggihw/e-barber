@@ -13,6 +13,10 @@ class AuthMain extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white10,
+      ),
       body: Center(
         // margin: EdgeInsets.only(top: 40.0),
         child: Column(
@@ -30,6 +34,7 @@ class AuthMain extends StatelessWidget{
                 width: 250,
                 height: 50,
                 child: FloatingActionButton.extended (
+                  heroTag: "register",
                   backgroundColor: const Color(0xff20639B),
                   onPressed: () {
                     Route route = MaterialPageRoute(builder: (context) => const AuthRegister());
@@ -44,6 +49,7 @@ class AuthMain extends StatelessWidget{
                 width: 250,
                 height: 50,
                 child: FloatingActionButton.extended (
+                  heroTag: "Login",
                   backgroundColor: const Color(0xff20639B),
                   onPressed: (){
                     Route route = MaterialPageRoute(builder: (context) => const AuthLogin());

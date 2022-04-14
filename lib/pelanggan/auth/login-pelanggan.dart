@@ -13,7 +13,7 @@ class _LoginPelangganState extends State<LoginPelanggan> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Login Pelanggan")
+      body: TextFormField()
           // Form(
           //   key: _formKey2,
           //   child: Container(

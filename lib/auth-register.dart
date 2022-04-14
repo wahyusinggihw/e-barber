@@ -41,6 +41,7 @@ class AuthRegister extends StatelessWidget{
                 width: 250,
                 height: 50,
                 child: FloatingActionButton.extended (
+                  heroTag: "RegisterBarberman",
                   backgroundColor: const Color(0xff20639B),
                   onPressed: () {
                     Route route = MaterialPageRoute(builder: (context) => const RegisterBarberman());
@@ -55,6 +56,7 @@ class AuthRegister extends StatelessWidget{
                 width: 250,
                 height: 50,
                 child: FloatingActionButton.extended (
+                  heroTag: "RegisterPelanggan",
                   backgroundColor: const Color(0xff20639B),
                   onPressed: (){
                     Route route = MaterialPageRoute(builder: (context) => const RegisterPelanggan());

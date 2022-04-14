@@ -8,28 +8,35 @@ class LoginBarberman extends StatefulWidget {
 }
 
 class _LoginBarbermanState extends State<LoginBarberman> {
-  final _login = GlobalKey<_LoginBarbermanState>();
-  // final _formKey2 = GlobalKey<FormState>();
+  final _loginKey = GlobalKey<_LoginBarbermanState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Login Barberman")
-          // Form(
-          //   key: _formKey2,
-          //   child: Container(
-          //     padding: EdgeInsets.all(20.0),
-          //     child: Column(
-          //       children: [
-          //       TextFormField(
-          //         decoration: new InputDecoration(
-          //           hintText: "Masukkan Nama Belakang",
-          //           labelText: "Nama Belakang"
-          //         ),
-          //       ),
-          //       ],
-          //     ),
-          //   ),
-          // ),      
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Form(
+            key: _loginKey,
+            child: Container(
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                  children: <Widget>[
+                    TextFormField(
+                      decoration: InputDecoration(
+                      hintText: "Masukkan Nama Lengkap",
+                      labelText: "Nama Lengkap",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10) 
+                      )
+                    ),
+                    )
+                  ],
+              ),
+            )
+          )
+        ],
+      )
     );
   }
 }
