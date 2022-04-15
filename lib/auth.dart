@@ -7,9 +7,6 @@ import 'package:flutter/material.dart';
 class AuthMain extends StatelessWidget{
   const AuthMain({Key? key}) : super(key: key);
 
-  // int _selectedNavbar=1;
-  
-
   @override
   Widget build(BuildContext context){
     return Scaffold(

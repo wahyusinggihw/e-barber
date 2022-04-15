@@ -54,7 +54,7 @@ class BottomBar extends StatefulWidget{
                         backgroundColor: Color(0xff20639B)
                         ),
                       BottomNavigationBarItem(
-                        icon: Icon(Icons.chat_bubble_outline_outlined),
+                        icon: Icon(Icons.chat_outlined),
                         label: "Chat",
                         backgroundColor: Color(0xff20639B)
                         ),

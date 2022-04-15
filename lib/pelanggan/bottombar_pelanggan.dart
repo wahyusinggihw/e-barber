@@ -3,9 +3,16 @@ import 'package:e_barber/barberman/menu/chat_barberman.dart';
 import 'package:e_barber/barberman/menu/dompet_barberman.dart';
 import 'package:e_barber/barberman/menu/order_barberman.dart';
 import 'package:e_barber/barberman/menu/user_barberman.dart';
+import 'package:e_barber/pelanggan/menu/beranda_pelanggan.dart';
+import 'package:e_barber/pelanggan/menu/chat_pelanggan.dart';
+import 'package:e_barber/pelanggan/menu/dompet_pelanggan.dart';
+import 'package:e_barber/pelanggan/menu/order_pelanggan.dart';
+import 'package:e_barber/pelanggan/menu/user_pelanggan.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatefulWidget{
+  const BottomBar({Key? key}) : super(key: key);
+
   // const BottomBar({Key? key}) : super(key: key);
   @override
   _BottomBarState createState() => _BottomBarState();
@@ -16,11 +23,11 @@ class BottomBar extends StatefulWidget{
     
     final List<Widget> _children = [
       // BerandaBarberman(),
-      BerandaBarberman(),
-      ChatBarberman(),
-      OrderBarberman(),
-      DompetBarberman(),
-      UserBarberman(),
+      BerandaPelanggan(),
+      ChatPelanggan(),
+      OrderPelanggan(),
+      DompetPelanggan(),
+      UserPelanggan(),
     ];
 
     void onBarTapped(int index) {
@@ -54,7 +61,7 @@ class BottomBar extends StatefulWidget{
                         backgroundColor: Color(0xff20639B)
                         ),
                       BottomNavigationBarItem(
-                        icon: Icon(Icons.chat_bubble_outline_outlined),
+                        icon: Icon(Icons.chat_outlined),
                         label: "Chat",
                         backgroundColor: Color(0xff20639B)
                         ),

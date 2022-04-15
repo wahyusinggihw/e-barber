@@ -92,7 +92,7 @@ class _LoginBarbermanState extends State<LoginBarberman> {
                   children: const <Widget> [
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10),
-                      child:  Text("E-Barber | Barberman",
+                      child: Text("E-Barber | Barberman",
                       style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),),
                       ),
                     Text("E-Barber merupakan tempat pangkas rambut yang akan melayani anda tanpa harus keluar rumah.", textAlign: TextAlign.justify,

@@ -1,15 +1,16 @@
-import 'dart:html';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class BerandaBarberman extends StatefulWidget{
-  const BerandaBarberman({Key? key}) : super(key: key);
+class ChatPelanggan extends StatefulWidget{
+  const ChatPelanggan({Key? key}) : super(key: key);
   
   @override
-  _BerandaBarbermanState createState() => _BerandaBarbermanState();
-  } 
+  _ChatPelangganState createState() => _ChatPelangganState();
+}
 
-  class _BerandaBarbermanState extends State<BerandaBarberman> {
-  
+class _ChatPelangganState extends State<ChatPelanggan> {
+  final datasets = <String, dynamic>{};
+
   @override
   Widget build(BuildContext context){
     
@@ -20,7 +21,7 @@ class BerandaBarberman extends StatefulWidget{
             children: <Widget> [
               Container(
                 padding: const EdgeInsets.only(bottom: 30),
-                child: const Text("Beranda | Barberman",
+                child: const Text("Chat pelanggan",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),),
               ),
               SizedBox(
@@ -30,7 +31,5 @@ class BerandaBarberman extends StatefulWidget{
           ),
         ),
       );
-      
   }
 }
-

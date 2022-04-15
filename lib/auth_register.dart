@@ -5,9 +5,6 @@ import 'package:flutter/material.dart';
 class AuthRegister extends StatelessWidget{
   const AuthRegister({Key? key}) : super(key: key);
 
-  // int _selectedNavbar=1;
-  
-
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -31,9 +28,18 @@ class AuthRegister extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children:  <Widget>[
             Container(
-              padding: const EdgeInsets.only(bottom: 30),
+              padding: const EdgeInsets.only(bottom: 2),
               child: const Text("E-Barber",
               style: TextStyle(fontSize: 24),),
+            ),
+            Container(
+              padding: const EdgeInsets.only(bottom: 30),
+              child: const Text("Register",
+              style: TextStyle(
+                  fontSize: 15,
+                  fontStyle: FontStyle.italic,
+                  color: Color.fromARGB(255, 173, 166, 166)),
+              ),
             ),
             Container(
               padding: const EdgeInsets.only(bottom: 10),
