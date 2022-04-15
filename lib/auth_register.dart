@@ -1,5 +1,5 @@
-import 'package:e_barber/barberman/auth/register-barberman.dart';
-import 'package:e_barber/pelanggan/auth/register-pelanggan.dart';
+import 'package:e_barber/barberman/auth/register_barberman.dart';
+import 'package:e_barber/pelanggan/auth/register_pelanggan.dart';
 import 'package:flutter/material.dart';
 
 class AuthRegister extends StatelessWidget{

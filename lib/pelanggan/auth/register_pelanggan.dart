@@ -1,18 +1,38 @@
+import 'package:e_barber/pelanggan/auth/login_pelanggan.dart';
 import 'package:flutter/material.dart';
 
-class LoginPelanggan extends StatefulWidget {
-  const LoginPelanggan ({Key? key}) : super(key: key);
+class RegisterPelanggan extends StatefulWidget {
+  const RegisterPelanggan ({Key? key}) : super(key: key);
 
   @override
-  _LoginPelangganState createState() => _LoginPelangganState();
+  _RegisterPelangganState createState() => _RegisterPelangganState();
 }
 
-class _LoginPelangganState extends State<LoginPelanggan> {
-  final _login = GlobalKey<_LoginPelangganState>();
+class _RegisterPelangganState extends State<RegisterPelanggan> {
+  final _login = GlobalKey<_RegisterPelangganState>();
   // final _formKey2 = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    //Variabel
+    final namaDepan = TextFormField(
+      autofocus: false,
+      // initialValue: 'password',
+      decoration: InputDecoration(
+        hintText: 'Nama Depan',
+        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+      ),
+    );
+
+    final namaBelakang = TextFormField(
+      autofocus: false,
+      // initialValue: 'password',
+      decoration: InputDecoration(
+        hintText: 'Nama Belakang',
+        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+      ),
+    );
+    
     final email= TextFormField(
       keyboardType: TextInputType.emailAddress,
       autofocus: true,
@@ -34,34 +54,47 @@ class _LoginPelangganState extends State<LoginPelanggan> {
       ),
     );
 
-    final loginButton = Padding(
+    final confirmPassword = TextFormField(
+      autofocus: false,
+      // initialValue: 'password',
+      decoration: InputDecoration(
+        hintText: 'Konfirmasi Password',
+        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+      ),
+    );
+
+    final registerButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16),
         child: SizedBox(
                 width: 250,
                 height: 50,
                 child: FloatingActionButton.extended (
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                  heroTag: "LoginPelanggan",
+                  heroTag: "RegisterBarberman",
                   backgroundColor: const Color(0xff20639B),
                   onPressed: () {
                     // Route route = MaterialPageRoute(builder: (context) => const LoginBarberman());
                     // Navigator.push(context, route);
                   },
-                  label: const Text("Login"),
+                  label: const Text("Register"),
                 ),
               )       
       );
 
-    final lupaPassword = TextButton(
+    final punyaAkun = TextButton(
         style: ButtonStyle(
           overlayColor: MaterialStateProperty.all(Colors.transparent)
         ),
-        child: Text("Lupa Password?",
-                    style: TextStyle(color: Colors.grey)
+        child: Text("Sudah punya akun?",
+                    style: TextStyle(color: Colors.grey, fontSize: 14)
         ),
-        onPressed: (){},
+        onPressed: (){
+          Route route = MaterialPageRoute(builder: (context) => const LoginPelanggan());
+          Navigator.push(context, route);
+        },
       );
-
+    
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -70,7 +103,7 @@ class _LoginPelangganState extends State<LoginPelanggan> {
           icon: Icon(Icons.arrow_back),
           color: Colors.black,
           onPressed: (){
-            Route route = MaterialPageRoute(builder: (context) => const LoginPelanggan());
+            Route route = MaterialPageRoute(builder: (context) => const RegisterPelanggan());
             Navigator.pop(context, route);
           },
           ),
@@ -80,7 +113,7 @@ class _LoginPelangganState extends State<LoginPelanggan> {
         child: ListView(
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 55, right: 55),
-          children: <Widget>[
+          children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -90,7 +123,7 @@ class _LoginPelangganState extends State<LoginPelanggan> {
                   children: const <Widget> [
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10),
-                      child:  Text("E-Barber | Pelanggan",
+                      child:  Text("E-Barber",
                       style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),),
                       ),
                     Text("E-Barber merupakan tempat pangkas rambut yang akan melayani anda tanpa harus keluar rumah.", textAlign: TextAlign.justify,
@@ -100,18 +133,24 @@ class _LoginPelangganState extends State<LoginPelanggan> {
               ),
               ],
             ),
+            namaDepan,
+            const SizedBox(height: 8),
+            namaBelakang,
+            const SizedBox(height: 8),
             email,
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             password,
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
+            confirmPassword,
+            const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                lupaPassword
+                punyaAkun
               ],
             ),
-            SizedBox(height: 24),
-            loginButton
+            const SizedBox(height: 24),
+            registerButton
           ],
         ),
       )

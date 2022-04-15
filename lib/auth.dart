@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-import 'package:e_barber/auth-login.dart';
-import 'package:e_barber/auth-register.dart';
+import 'package:e_barber/auth_login.dart';
+import 'package:e_barber/auth_register.dart';
 import 'package:flutter/material.dart';
 
 class AuthMain extends StatelessWidget{

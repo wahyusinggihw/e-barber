@@ -1,4 +1,5 @@
-import 'package:e_barber/barberman/menu/beranda-barberman.dart';
+import 'package:e_barber/barberman/bottombar_barberman.dart';
+import 'package:e_barber/barberman/menu/beranda_barberman.dart';
 import 'package:flutter/material.dart';
 
 class LoginBarberman extends StatefulWidget {
@@ -42,10 +43,10 @@ class _LoginBarbermanState extends State<LoginBarberman> {
                 height: 50,
                 child: FloatingActionButton.extended (
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                  heroTag: "LoginPelanggan",
+                  heroTag: "LoginBarberman",
                   backgroundColor: const Color(0xff20639B),
                   onPressed: () {
-                    Route route = MaterialPageRoute(builder: (context) => const BerandaBarberman());
+                    Route route = MaterialPageRoute(builder: (context) => BottomBar());
                     Navigator.push(context, route);
                   },
                   label: const Text("Login"),

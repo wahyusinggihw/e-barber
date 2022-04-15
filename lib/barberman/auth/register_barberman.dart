@@ -1,4 +1,4 @@
-import 'package:e_barber/barberman/auth/login-barberman.dart';
+import 'package:e_barber/barberman/auth/login_barberman.dart';
 import 'package:flutter/material.dart';
 
 class RegisterBarberman extends StatefulWidget {
