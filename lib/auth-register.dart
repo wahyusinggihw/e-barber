@@ -2,14 +2,13 @@ import 'package:e_barber/barberman/auth/register-barberman.dart';
 import 'package:e_barber/pelanggan/auth/register-pelanggan.dart';
 import 'package:flutter/material.dart';
 
-class AuthRegister extends StatelessWidget{
+class AuthRegister extends StatelessWidget {
   const AuthRegister({Key? key}) : super(key: key);
 
   // int _selectedNavbar=1;
-  
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -17,56 +16,68 @@ class AuthRegister extends StatelessWidget{
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           color: Colors.black,
-          onPressed: (){
-            Route route = MaterialPageRoute(builder: (context) => const AuthRegister());
+          onPressed: () {
+            Route route =
+                MaterialPageRoute(builder: (context) => const AuthRegister());
             Navigator.pop(context, route);
           },
-          ),
+        ),
         // title: Text("<", style: TextStyle(color: Colors.black),),
       ),
       body: Center(
-        // margin: EdgeInsets.only(top: 40.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:  <Widget>[
-            Container(
-              padding: const EdgeInsets.only(bottom: 30),
-              child: const Text("E-Barber",
-              style: TextStyle(fontSize: 24),),
+          // margin: EdgeInsets.only(top: 40.0),
+          child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.all(5.0),
+            child: const Text(
+              "E-Barber",
+              style: TextStyle(fontSize: 24),
             ),
-            Container(
+          ),
+          Container(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: const Text(
+              "Register",
+              style: TextStyle(
+                  fontSize: 15,
+                  fontStyle: FontStyle.italic,
+                  color: Color.fromARGB(255, 173, 166, 166)),
+            ),
+          ),
+          Container(
               padding: const EdgeInsets.only(bottom: 10),
               child: SizedBox(
                 width: 250,
                 height: 50,
-                child: FloatingActionButton.extended (
+                child: FloatingActionButton.extended(
                   backgroundColor: const Color(0xff20639B),
                   onPressed: () {
-                    Route route = MaterialPageRoute(builder: (context) => const RegisterBarberman());
+                    Route route = MaterialPageRoute(
+                        builder: (context) => const RegisterBarberman());
                     Navigator.push(context, route);
                   },
                   label: const Text("Barberman"),
                 ),
-              )  
-            ),
-            Container(
+              )),
+          Container(
               child: SizedBox(
-                width: 250,
-                height: 50,
-                child: FloatingActionButton.extended (
-                  backgroundColor: const Color(0xff20639B),
-                  onPressed: (){
-                    Route route = MaterialPageRoute(builder: (context) => const RegisterPelanggan());
-                    Navigator.push(context, route);
-                  },
-                  label: const Text("Pelanggan"),
-                ),
-              )  
+            width: 250,
+            height: 50,
+            child: FloatingActionButton.extended(
+              backgroundColor: const Color(0xff20639B),
+              onPressed: () {
+                Route route = MaterialPageRoute(
+                    builder: (context) => const RegisterPelanggan());
+                Navigator.push(context, route);
+              },
+              label: const Text("Pelanggan"),
             ),
-          ],
-        )
-      ),
+          )),
+        ],
+      )),
     );
   }
 }
