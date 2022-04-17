@@ -17,7 +17,39 @@ class ChatBarberman extends StatefulWidget{
     
     return Scaffold(
       body: Center(
-        child: Text("Chat barberman"),
+        child: ListView(
+          padding: const EdgeInsets.only(left: 50, right: 50, top: 25),
+          children: <Widget> [
+            Center(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    padding: const EdgeInsets.only(bottom: 30),
+                    child: const Text("Obrolan",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xff20639B), width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(20))
+                    ),
+                      child: SizedBox(
+                        width: 500,
+                        height: 1000,
+                        child: Column(
+                          children: [
+                            //Insert Chat
+                          ],
+                        ),
+                        //INSERT CHAT
+                      ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
       );
       

@@ -1,16 +1,17 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'dart:html';
 
-class ChatPelanggan extends StatefulWidget{
-  const ChatPelanggan({Key? key}) : super(key: key);
+import 'package:e_barber/barberman/bottombar_barberman.dart';
+import 'package:flutter/material.dart';
+
+class ListPotongan extends StatefulWidget{
+  const ListPotongan({Key? key}) : super(key: key);
   
   @override
-  _ChatPelangganState createState() => _ChatPelangganState();
-}
+  _ListPotonganState createState() => _ListPotonganState();
+  } 
 
-class _ChatPelangganState extends State<ChatPelanggan> {
-  final datasets = <String, dynamic>{};
-
+  class _ListPotonganState extends State<ListPotongan> {
+  
   @override
   Widget build(BuildContext context){
     
@@ -24,17 +25,14 @@ class _ChatPelangganState extends State<ChatPelanggan> {
                 children: <Widget>[
                   Container(
                     padding: const EdgeInsets.only(bottom: 30),
-                    child: const Text("Obrolan",
+                    child: const Text("Barbershop 1",
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.all(15),
-                    padding: const EdgeInsets.all(3),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black)
-                    ),
-                    child: Text("Wahyu")
+                  Column(
+                    children: [
+                      
+                    ],
                   )
                 ],
               ),
@@ -43,5 +41,7 @@ class _ChatPelangganState extends State<ChatPelanggan> {
         ),
       ),
       );
+      
   }
 }
+

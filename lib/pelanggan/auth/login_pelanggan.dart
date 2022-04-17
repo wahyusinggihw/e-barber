@@ -88,11 +88,24 @@ class _LoginPelangganState extends State<LoginPelanggan> {
                 Container(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: Column(
-                  children: const <Widget> [
+                  children: <Widget> [
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10),
-                      child:  Text("E-Barber | Pelanggan",
-                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),),
+                      child: Column(
+                        children: [
+                          Text("Form Login",
+                          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),),
+                          Container(
+                            padding: const EdgeInsets.only(bottom: 30),
+                            child: const Text("Pelanggan",
+                            style: TextStyle(
+                            fontSize: 15,
+                            fontStyle: FontStyle.italic,
+                            color: Color.fromARGB(255, 173, 166, 166)),
+                            ),
+                          ),
+                        ],
+                      ) 
                       ),
                     Text("E-Barber merupakan tempat pangkas rambut yang akan melayani anda tanpa harus keluar rumah.", textAlign: TextAlign.justify,
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, wordSpacing: 10, height: 2)), 
