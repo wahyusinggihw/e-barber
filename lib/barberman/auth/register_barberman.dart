@@ -2,7 +2,7 @@ import 'package:e_barber/barberman/auth/login_barberman.dart';
 import 'package:flutter/material.dart';
 
 class RegisterBarberman extends StatefulWidget {
-  const RegisterBarberman ({Key? key}) : super(key: key);
+  const RegisterBarberman({Key? key}) : super(key: key);
 
   @override
   _RegisterBarbermanState createState() => _RegisterBarbermanState();
@@ -13,7 +13,6 @@ class _RegisterBarbermanState extends State<RegisterBarberman> {
   // final _formKey2 = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    
     final namaDepan = TextFormField(
       autofocus: false,
       // initialValue: 'password',
@@ -33,8 +32,8 @@ class _RegisterBarbermanState extends State<RegisterBarberman> {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),
     );
-    
-    final email= TextFormField(
+
+    final email = TextFormField(
       keyboardType: TextInputType.emailAddress,
       autofocus: true,
       // initialValue: 'example@gmail.com',
@@ -66,108 +65,107 @@ class _RegisterBarbermanState extends State<RegisterBarberman> {
     );
 
     final registerButton = Padding(
-      padding: EdgeInsets.symmetric(vertical: 16),
+        padding: EdgeInsets.symmetric(vertical: 16),
         child: SizedBox(
-                width: 250,
-                height: 50,
-                child: FloatingActionButton.extended (
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                  heroTag: "RegisterBarberman",
-                  backgroundColor: const Color(0xff20639B),
-                  onPressed: () {
-                    // Route route = MaterialPageRoute(builder: (context) => const LoginBarberman());
-                    // Navigator.push(context, route);
-                  },
-                  label: const Text("Register"),
-                ),
-              )       
-      );
+          width: 250,
+          height: 50,
+          child: FloatingActionButton.extended(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            heroTag: "RegisterBarberman",
+            backgroundColor: const Color(0xff20639B),
+            onPressed: () {
+              // Route route = MaterialPageRoute(builder: (context) => const LoginBarberman());
+              // Navigator.push(context, route);
+            },
+            label: const Text("Register"),
+          ),
+        ));
 
     final punyaAkun = TextButton(
-        style: ButtonStyle(
-          overlayColor: MaterialStateProperty.all(Colors.transparent)
-        ),
-        child: Text("Sudah punya akun?",
-                    style: TextStyle(color: Colors.grey, fontSize: 14)
-        ),
-        onPressed: (){
-          Route route = MaterialPageRoute(builder: (context) => const LoginBarberman());
-          Navigator.push(context, route);
-        },
-      );
-    
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white10,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          color: Colors.black,
-          onPressed: (){
-            Route route = MaterialPageRoute(builder: (context) => const RegisterBarberman());
-            Navigator.pop(context, route);
-          },
-          ),
-        // title: Text("<", style: TextStyle(color: Colors.black),),
-      ),
-      body: Center(
-        child: ListView(
-          shrinkWrap: true,
-          padding: EdgeInsets.only(left: 55, right: 55),
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: Column(
-                  children:  <Widget> [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: Column(
-                        children: [
-                          Text("Form Registrasi",
-                          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),),
-                          Container(
-                            padding: const EdgeInsets.only(bottom: 30),
-                            child: const Text("Barberman",
-                            style: TextStyle(
-                            fontSize: 15,
-                            fontStyle: FontStyle.italic,
-                            color: Color.fromARGB(255, 173, 166, 166)),
-                            ),
-                          ),
-                        ]
-                      )  
-                      ),
-                    Text("E-Barber merupakan tempat pangkas rambut yang akan melayani anda tanpa harus keluar rumah.", textAlign: TextAlign.justify,
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, wordSpacing: 10, height: 2)), 
-                  ]
-                )
-              ),
-              ],
-            ),
-            namaDepan,
-            const SizedBox(height: 8),
-            namaBelakang,
-            const SizedBox(height: 8),
-            email,
-            const SizedBox(height: 8),
-            password,
-            const SizedBox(height: 8),
-            confirmPassword,
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                punyaAkun
-              ],
-            ),
-            const SizedBox(height: 24),
-            registerButton
-          ],
-        ),
-      )
+      style: ButtonStyle(
+          overlayColor: MaterialStateProperty.all(Colors.transparent)),
+      child: Text("Sudah punya akun?",
+          style: TextStyle(color: Colors.grey, fontSize: 14)),
+      onPressed: () {
+        Navigator.pushNamed(context, '/login-barberman');
+      },
     );
+
+    return Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white10,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            color: Colors.black,
+            onPressed: () {
+              // Route route = MaterialPageRoute(builder: (context) => const RegisterBarberman());
+              Navigator.pop(context);
+            },
+          ),
+          // title: Text("<", style: TextStyle(color: Colors.black),),
+        ),
+        body: Center(
+          child: ListView(
+            shrinkWrap: true,
+            padding: EdgeInsets.only(left: 55, right: 55),
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: Column(children: <Widget>[
+                        Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Column(children: [
+                              Text(
+                                "Form Registrasi",
+                                style: TextStyle(
+                                    fontSize: 24, fontWeight: FontWeight.w900),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.only(bottom: 30),
+                                child: const Text(
+                                  "Barberman",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontStyle: FontStyle.italic,
+                                      color:
+                                          Color.fromARGB(255, 173, 166, 166)),
+                                ),
+                              ),
+                            ])),
+                        Text(
+                            "E-Barber merupakan tempat pangkas rambut yang akan melayani anda tanpa harus keluar rumah.",
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w300,
+                                wordSpacing: 10,
+                                height: 2)),
+                      ])),
+                ],
+              ),
+              namaDepan,
+              const SizedBox(height: 8),
+              namaBelakang,
+              const SizedBox(height: 8),
+              email,
+              const SizedBox(height: 8),
+              password,
+              const SizedBox(height: 8),
+              confirmPassword,
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [punyaAkun],
+              ),
+              const SizedBox(height: 24),
+              registerButton
+            ],
+          ),
+        ));
   }
 }

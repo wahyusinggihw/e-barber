@@ -2,11 +2,11 @@ import 'package:e_barber/barberman/auth/register_barberman.dart';
 import 'package:e_barber/pelanggan/auth/register_pelanggan.dart';
 import 'package:flutter/material.dart';
 
-class AuthRegister extends StatelessWidget{
+class AuthRegister extends StatelessWidget {
   const AuthRegister({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -14,69 +14,73 @@ class AuthRegister extends StatelessWidget{
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           color: Colors.black,
-          onPressed: (){
-            Route route = MaterialPageRoute(builder: (context) => const AuthRegister());
-            Navigator.pop(context, route);
+          onPressed: () {
+            Navigator.pop(context);
           },
-          ),
+        ),
         // title: Text("<", style: TextStyle(color: Colors.black),),
       ),
       body: Center(
-        // margin: EdgeInsets.only(top: 40.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:  <Widget>[
-            Container(
-              padding: const EdgeInsets.only(bottom: 2),
-              child: const Text("E-Barber",
-              style: TextStyle(fontSize: 24),),
+          // margin: EdgeInsets.only(top: 40.0),
+          child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.only(bottom: 2),
+            child: const Text(
+              "E-Barber",
+              style: TextStyle(fontSize: 24),
             ),
-            Container(
-              padding: const EdgeInsets.only(bottom: 30),
-              child: const Text("Register",
+          ),
+          Container(
+            padding: const EdgeInsets.only(bottom: 30),
+            child: const Text(
+              "Register",
               style: TextStyle(
                   fontSize: 15,
                   fontStyle: FontStyle.italic,
                   color: Color.fromARGB(255, 173, 166, 166)),
-              ),
             ),
-            Container(
+          ),
+          Container(
               padding: const EdgeInsets.only(bottom: 10),
               child: SizedBox(
                 width: 250,
                 height: 50,
-                child: FloatingActionButton.extended (
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                child: FloatingActionButton.extended(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
                   heroTag: "RegisterBarberman",
                   backgroundColor: const Color(0xff20639B),
                   onPressed: () {
-                    Route route = MaterialPageRoute(builder: (context) => const RegisterBarberman());
-                    Navigator.push(context, route);
+                    // Route route = MaterialPageRoute(builder: (context) => const RegisterBarberman());
+                    // Navigator.push(context, route);
+                    Navigator.pushNamed(context, '/register-barberman');
                   },
                   label: const Text("Barberman"),
                 ),
-              )  
-            ),
-            Container(
+              )),
+          Container(
               child: SizedBox(
-                width: 250,
-                height: 50,
-                child: FloatingActionButton.extended (
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                  heroTag: "RegisterPelanggan",
-                  backgroundColor: const Color(0xff20639B),
-                  onPressed: (){
-                    Route route = MaterialPageRoute(builder: (context) => const RegisterPelanggan());
-                    Navigator.push(context, route);
-                  },
-                  label: const Text("Pelanggan"),
-                ),
-              )  
+            width: 250,
+            height: 50,
+            child: FloatingActionButton.extended(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              heroTag: "RegisterPelanggan",
+              backgroundColor: const Color(0xff20639B),
+              onPressed: () {
+                // Route route = MaterialPageRoute(
+                //     builder: (context) => const RegisterPelanggan());
+                // Navigator.push(context, route);
+                Navigator.pushNamed(context, '/register-pelanggan');
+              },
+              label: const Text("Pelanggan"),
             ),
-          ],
-        )
-      ),
+          )),
+        ],
+      )),
     );
   }
 }

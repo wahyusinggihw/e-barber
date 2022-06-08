@@ -1,66 +1,65 @@
-import 'dart:ui';
-
 import 'package:e_barber/auth_login.dart';
 import 'package:e_barber/auth_register.dart';
 import 'package:flutter/material.dart';
 
-class AuthMain extends StatelessWidget{
+class AuthMain extends StatelessWidget {
   const AuthMain({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white10,
       ),
       body: Center(
-        // margin: EdgeInsets.only(top: 40.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:  <Widget>[
-            Container(
-              padding: const EdgeInsets.only(bottom: 30),
-              child: const Text("E-Barber",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),),
+          // margin: EdgeInsets.only(top: 40.0),
+          child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.only(bottom: 30),
+            child: const Text(
+              "E-Barber",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
             ),
-            Container(
+          ),
+          Container(
               padding: const EdgeInsets.only(bottom: 10),
               child: SizedBox(
                 width: 250,
                 height: 50,
-                child: FloatingActionButton.extended (
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                child: FloatingActionButton.extended(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
                   heroTag: "register",
                   backgroundColor: const Color(0xff20639B),
                   onPressed: () {
-                    Route route = MaterialPageRoute(builder: (context) => const AuthRegister());
-                    Navigator.push(context, route);
+                    // Route route = MaterialPageRoute(builder: (context) => const AuthRegister());
+                    // Navigator.push(context, route);
+                    Navigator.pushNamed(context, '/register');
                   },
                   label: const Text("Register"),
                 ),
-              )  
-            ),
-            Container(
+              )),
+          Container(
               child: SizedBox(
-                width: 250,
-                height: 50,
-                child: FloatingActionButton.extended (
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                  heroTag: "Login",
-                  backgroundColor: const Color(0xff20639B),
-                  onPressed: (){
-                    Route route = MaterialPageRoute(builder: (context) => const AuthLogin());
-                    Navigator.push(context, route);
-                  },
-                  label: const Text("Login"),
-                ),
-              )  
+            width: 250,
+            height: 50,
+            child: FloatingActionButton.extended(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              heroTag: "Login",
+              backgroundColor: const Color(0xff20639B),
+              onPressed: () {
+                Navigator.pushNamed(context, '/login');
+              },
+              label: const Text("Login"),
             ),
-          ],
-        )
-      ),
+          )),
+        ],
+      )),
     );
   }
 }
