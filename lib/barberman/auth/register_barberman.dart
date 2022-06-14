@@ -143,8 +143,7 @@ class _RegisterBarbermanState extends State<RegisterBarberman> {
     final punyaAkun = TextButton(
       style: ButtonStyle(
           overlayColor: MaterialStateProperty.all(Colors.transparent)),
-      child: Text("Sudah punya akun?",
-          style: TextStyle(color: Colors.grey, fontSize: 14)),
+      child: Text("Login", style: TextStyle(color: Colors.blue, fontSize: 14)),
       onPressed: () {
         Navigator.pushNamed(context, '/login-barberman');
       },
@@ -224,7 +223,13 @@ class _RegisterBarbermanState extends State<RegisterBarberman> {
                   )),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [punyaAkun],
+                children: [
+                  Text(
+                    "Sudah punya akun?",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  punyaAkun
+                ],
               ),
               const SizedBox(height: 24),
               registerButton

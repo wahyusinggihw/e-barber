@@ -1,5 +1,6 @@
 import 'package:e_barber/barberman/bottombar_barberman.dart';
 import 'package:e_barber/barberman/menu/beranda_barberman.dart';
+import 'package:e_barber/barberman/model/model_barberman.dart';
 import 'package:flutter/material.dart';
 
 class LoginBarberman extends StatefulWidget {
@@ -11,6 +12,8 @@ class LoginBarberman extends StatefulWidget {
 
 class _LoginBarbermanState extends State<LoginBarberman> {
   final _loginKey = GlobalKey<_LoginBarbermanState>();
+  final _formKey = GlobalKey<FormState>();
+  var formData = FormData();
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +26,33 @@ class _LoginBarbermanState extends State<LoginBarberman> {
         contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),
+      validator: (value) {
+        if (value!.isEmpty) {
+          return "Email Wajib diisi";
+        } else {
+          formData.email = value;
+          return null;
+        }
+      },
     );
 
     final password = TextFormField(
       autofocus: false,
       // initialValue: 'password',
+      obscureText: true,
       decoration: InputDecoration(
         hintText: 'Password',
         contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),
+      validator: (value) {
+        if (value!.isEmpty) {
+          return "Password Wajib diisi";
+        } else {
+          formData.password = value;
+          return null;
+        }
+      },
     );
 
     final loginButton = Padding(
@@ -46,9 +66,14 @@ class _LoginBarbermanState extends State<LoginBarberman> {
             heroTag: "LoginBarberman",
             backgroundColor: const Color(0xff20639B),
             onPressed: () {
-              Route route =
-                  MaterialPageRoute(builder: (context) => BottomBar());
-              Navigator.push(context, route);
+              if (_formKey.currentState!.validate()) {
+                // simpanData.password = formData.password;
+                // simpanData.confirmPassword = formData.confirmPassword;
+              }
+              // Route route =
+              //     MaterialPageRoute(builder: (context) => BottomBar());
+              // Navigator.push(context, route);
+              // Navigator.pushNamed(context, '/home-barberman');
             },
             label: const Text("Login"),
           ),
@@ -119,10 +144,16 @@ class _LoginBarbermanState extends State<LoginBarberman> {
                       ])),
                 ],
               ),
-              email,
-              SizedBox(height: 8),
-              password,
-              SizedBox(height: 8),
+              Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      email,
+                      const SizedBox(height: 8),
+                      password,
+                      const SizedBox(height: 8),
+                    ],
+                  )),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [lupaPassword],

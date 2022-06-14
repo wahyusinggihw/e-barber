@@ -139,12 +139,9 @@ class _RegisterPelangganState extends State<RegisterPelanggan> {
     final punyaAkun = TextButton(
       style: ButtonStyle(
           overlayColor: MaterialStateProperty.all(Colors.transparent)),
-      child: Text("Sudah punya akun?",
-          style: TextStyle(color: Colors.grey, fontSize: 14)),
+      child: Text("Login", style: TextStyle(color: Colors.blue, fontSize: 14)),
       onPressed: () {
-        Route route =
-            MaterialPageRoute(builder: (context) => const LoginPelanggan());
-        Navigator.push(context, route);
+        Navigator.pushNamed(context, '/login-pelanggan');
       },
     );
 
@@ -224,7 +221,13 @@ class _RegisterPelangganState extends State<RegisterPelanggan> {
                   )),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [punyaAkun],
+                children: [
+                  Text(
+                    "Sudah punya akun?",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  punyaAkun
+                ],
               ),
               const SizedBox(height: 24),
               registerButton

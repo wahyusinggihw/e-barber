@@ -3,9 +3,11 @@ import 'package:e_barber/auth_login.dart';
 import 'package:e_barber/auth_register.dart';
 import 'package:e_barber/barberman/auth/login_barberman.dart';
 import 'package:e_barber/barberman/auth/register_barberman.dart';
+import 'package:e_barber/barberman/bottombar_barberman.dart';
 import 'package:e_barber/main.dart';
 import 'package:e_barber/pelanggan/auth/login_pelanggan.dart';
 import 'package:e_barber/pelanggan/auth/register_pelanggan.dart';
+import 'package:e_barber/pelanggan/bottombar_pelanggan.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {
@@ -27,6 +29,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => LoginBarberman());
       case '/login-pelanggan':
         return MaterialPageRoute(builder: (_) => LoginPelanggan());
+      case '/home-barberman':
+        return MaterialPageRoute(builder: (_) => BottomBarBarberman());
+      case '/home-pelanggan':
+        return MaterialPageRoute(builder: (_) => BottomBar());
       // return MaterialPageRoute(builder: (_) => AboutPage(args));
       default:
         return _errorRoute();

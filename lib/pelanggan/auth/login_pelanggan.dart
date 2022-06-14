@@ -1,4 +1,5 @@
 import 'package:e_barber/pelanggan/bottombar_pelanggan.dart';
+import 'package:e_barber/pelanggan/model/model_pelanggan.dart';
 import 'package:flutter/material.dart';
 
 class LoginPelanggan extends StatefulWidget {
@@ -10,7 +11,9 @@ class LoginPelanggan extends StatefulWidget {
 
 class _LoginPelangganState extends State<LoginPelanggan> {
   final _login = GlobalKey<_LoginPelangganState>();
-  // final _formKey2 = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
+  var formData = FormData();
+
   @override
   Widget build(BuildContext context) {
     //Variabel
@@ -23,16 +26,33 @@ class _LoginPelangganState extends State<LoginPelanggan> {
         contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),
+      validator: (value) {
+        if (value!.isEmpty) {
+          return "Email Wajib diisi";
+        } else {
+          formData.email = value;
+          return null;
+        }
+      },
     );
 
     final password = TextFormField(
       autofocus: false,
       // initialValue: 'password',
+      obscureText: true,
       decoration: InputDecoration(
         hintText: 'Password',
         contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),
+      validator: (value) {
+        if (value!.isEmpty) {
+          return "Password Wajib diisi";
+        } else {
+          formData.password = value;
+          return null;
+        }
+      },
     );
 
     final loginButton = Padding(
@@ -46,9 +66,10 @@ class _LoginPelangganState extends State<LoginPelanggan> {
             heroTag: "LoginPelanggan",
             backgroundColor: const Color(0xff20639B),
             onPressed: () {
-              Route route =
-                  MaterialPageRoute(builder: (context) => BottomBar());
-              Navigator.push(context, route);
+              if (_formKey.currentState!.validate()) {
+                // simpanData.password = formData.password;
+                // simpanData.confirmPassword = formData.confirmPassword;
+              }
             },
             label: const Text("Login"),
           ),
@@ -119,10 +140,16 @@ class _LoginPelangganState extends State<LoginPelanggan> {
                       ])),
                 ],
               ),
-              email,
-              SizedBox(height: 8),
-              password,
-              SizedBox(height: 8),
+              Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      email,
+                      const SizedBox(height: 8),
+                      password,
+                      const SizedBox(height: 8),
+                    ],
+                  )),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [lupaPassword],
